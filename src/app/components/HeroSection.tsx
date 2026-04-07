@@ -1,4 +1,4 @@
-import { Check, Play, ShieldAlert, Globe, Activity } from 'lucide-react';
+import { Check, Play, Globe, Activity } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export function HeroSection() {
@@ -10,60 +10,57 @@ export function HeroSection() {
   ];
 
   return (
-    <section className="bg-white border-b border-[#E5E5E5] relative overflow-hidden">
-      {/* Decorative gradient blur in background */}
-      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-[#7da17e]/10 to-transparent rounded-full blur-3xl pointer-events-none -z-10 translate-x-1/3 -translate-y-1/4" />
-      
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-8 py-20 lg:py-28">
-        <div className="grid lg:grid-cols-5 gap-16 items-center">
+    <section className="bg-white border-b border-[#DBE2EF] relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-[#3F72AF]/10 to-transparent rounded-full blur-3xl pointer-events-none -z-10 translate-x-1/3 -translate-y-1/4" />
+
+      <div className="max-w-[1280px] mx-auto px-4 lg:px-8 py-10 lg:py-20">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-center">
           {/* Left side - Copy */}
-          <div className="lg:col-span-3 space-y-10">
-            <motion.div 
+          <div className="lg:col-span-3 space-y-6">
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="space-y-6"
+              className="space-y-4"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#163f38]/5 border border-[#163f38]/10 text-[#163f38] text-[14px] font-semibold tracking-wide uppercase font-['Instrument_Sans',system-ui,sans-serif]">
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#112D4E]/5 border border-[#112D4E]/10 text-[#112D4E] text-[11px] lg:text-[13px] font-semibold tracking-wide uppercase font-['Instrument_Sans',system-ui,sans-serif]">
                 <Activity className="w-4 h-4" />
                 <span>The new standard for Health Plan QA</span>
               </div>
-              <h1 className="font-['Instrument_Sans',system-ui,sans-serif] text-[52px] lg:text-[64px] font-semibold text-[#1a1a1a] leading-[1.05] tracking-tight">
+              <h1 className="font-['Instrument_Sans',system-ui,sans-serif] text-[28px] md:text-[36px] lg:text-[50px] font-semibold text-[#112D4E] leading-[1.08] tracking-tight">
                 Audit 100% of calls. In any language. Across every vendor.
               </h1>
-              <p className="font-['Charter',Georgia,serif] text-[22px] lg:text-[24px] text-[#5a5a5a] leading-[1.5] max-w-2xl">
+              <p className="font-['Charter',Georgia,serif] text-[15px] md:text-[17px] lg:text-[21px] text-[#5a7b9e] leading-[1.5] max-w-2xl">
                 The AI QA platform built specifically for health plans to monitor compliance and member experience without sampling.
               </p>
             </motion.div>
 
-            {/* Bullet points */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="grid sm:grid-cols-2 gap-4"
+              className="grid sm:grid-cols-2 gap-3"
             >
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-6 h-6 bg-[#7da17e]/20 rounded-full flex items-center justify-center mt-1">
-                    <Check className="w-4 h-4 text-[#163f38]" />
+                <div key={index} className="flex items-start gap-2">
+                  <div className="flex-shrink-0 w-5 h-5 bg-[#3F72AF]/20 rounded-full flex items-center justify-center mt-0.5">
+                    <Check className="w-3 h-3 text-[#112D4E]" />
                   </div>
-                  <span className="text-[#1a1a1a] text-[17px] leading-[1.5]">{benefit}</span>
+                  <span className="text-[#112D4E] text-[13px] lg:text-[15px] leading-[1.5]">{benefit}</span>
                 </div>
               ))}
             </motion.div>
 
-            {/* CTA Buttons */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-col sm:flex-row gap-4 pt-2"
             >
-              <button className="bg-[#163f38] text-white px-8 py-4 rounded-[8px] hover:bg-[#112d28] transition-colors font-['Instrument_Sans',system-ui,sans-serif] font-medium text-[16px] shadow-[0_4px_14px_rgba(22,63,56,0.25)] flex items-center justify-center gap-2 hover:-translate-y-0.5 duration-200">
-                Get a Demo
+              <button className="bg-[#112D4E] text-white px-5 lg:px-7 py-3 rounded-[8px] hover:bg-[#0a1f3a] transition-colors font-['Instrument_Sans',system-ui,sans-serif] font-medium text-[14px] lg:text-[15px] shadow-[0_4px_14px_rgba(17,45,78,0.25)] flex items-center justify-center gap-2 hover:-translate-y-0.5 duration-200">
+                Book a 15-Minute Demo
               </button>
-              <button className="bg-white border border-[#E5E5E5] text-[#1a1a1a] px-8 py-4 rounded-[8px] hover:bg-[#f7f6f9] transition-colors font-['Instrument_Sans',system-ui,sans-serif] font-medium text-[16px] shadow-sm flex items-center justify-center gap-2 hover:-translate-y-0.5 duration-200">
+              <button className="bg-white border border-[#DBE2EF] text-[#112D4E] px-5 lg:px-7 py-3 rounded-[8px] hover:bg-[#F9F7F7] transition-colors font-['Instrument_Sans',system-ui,sans-serif] font-medium text-[14px] lg:text-[15px] shadow-sm flex items-center justify-center gap-2 hover:-translate-y-0.5 duration-200">
                 <Play className="w-4 h-4 fill-current" />
                 See How it Works
               </button>
@@ -71,23 +68,23 @@ export function HeroSection() {
           </div>
 
           {/* Right side - High Fidelity Mockup */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2, type: "spring", stiffness: 100 }}
             className="lg:col-span-2 relative"
           >
             {/* Main floating card */}
-            <div className="bg-white rounded-[16px] p-6 shadow-[0_24px_48px_-12px_rgba(22,63,56,0.15)] border border-[#E5E5E5] relative z-10">
+            <div className="bg-white rounded-[16px] p-6 shadow-[0_24px_48px_-12px_rgba(17,45,78,0.15)] border border-[#DBE2EF] relative z-10">
               {/* Header */}
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-[#E5E5E5]">
+              <div className="flex items-center justify-between mb-6 pb-4 border-b border-[#DBE2EF]">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#163f38] flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-[#112D4E] flex items-center justify-center">
                     <span className="text-white font-['Instrument_Sans',system-ui,sans-serif] font-bold">98</span>
                   </div>
                   <div>
-                    <div className="text-[14px] font-bold text-[#1a1a1a] font-['Instrument_Sans',system-ui,sans-serif]">Call #892-Medicare-Adv</div>
-                    <div className="text-[12px] text-[#5a5a5a] flex items-center gap-1 mt-0.5">
+                    <div className="text-[14px] font-bold text-[#112D4E] font-['Instrument_Sans',system-ui,sans-serif]">Call #892-Medicare-Adv</div>
+                    <div className="text-[12px] text-[#5a7b9e] flex items-center gap-1 mt-0.5">
                       <Globe className="w-3 h-3" /> Spanish (Detected)
                     </div>
                   </div>
@@ -99,42 +96,42 @@ export function HeroSection() {
 
               {/* Transcript snippet */}
               <div className="space-y-4 mb-6 relative">
-                <div className="absolute left-[11px] top-4 bottom-4 w-[2px] bg-[#f0f0f0] -z-10"></div>
-                
+                <div className="absolute left-[11px] top-4 bottom-4 w-[2px] bg-[#DBE2EF] -z-10"></div>
+
                 <div className="flex gap-4">
-                  <div className="w-6 h-6 rounded-full bg-[#7da17e]/20 flex items-center justify-center flex-shrink-0 mt-1 ring-4 ring-white">
-                    <span className="text-[10px] font-bold text-[#163f38]">M</span>
+                  <div className="w-6 h-6 rounded-full bg-[#3F72AF]/20 flex items-center justify-center flex-shrink-0 mt-1 ring-4 ring-white">
+                    <span className="text-[10px] font-bold text-[#112D4E]">M</span>
                   </div>
-                  <div className="bg-[#f7f6f9] rounded-[8px] rounded-tl-none p-3 text-[13px] text-[#5a5a5a] font-['Charter',Georgia,serif] flex-1 border border-[#E5E5E5]">
+                  <div className="bg-[#F9F7F7] rounded-[8px] rounded-tl-none p-3 text-[13px] text-[#5a7b9e] font-['Charter',Georgia,serif] flex-1 border border-[#DBE2EF]">
                     Necesito saber si mi insulina está cubierta este año.
                   </div>
                 </div>
-                
+
                 <div className="flex gap-4 flex-row-reverse">
-                  <div className="w-6 h-6 rounded-full bg-[#163f38]/10 flex items-center justify-center flex-shrink-0 mt-1 ring-4 ring-white">
-                    <span className="text-[10px] font-bold text-[#163f38]">A</span>
+                  <div className="w-6 h-6 rounded-full bg-[#112D4E]/10 flex items-center justify-center flex-shrink-0 mt-1 ring-4 ring-white">
+                    <span className="text-[10px] font-bold text-[#112D4E]">A</span>
                   </div>
-                  <div className="bg-[#163f38] rounded-[8px] rounded-tr-none p-3 text-[13px] text-white font-['Charter',Georgia,serif] flex-1 shadow-sm">
+                  <div className="bg-[#112D4E] rounded-[8px] rounded-tr-none p-3 text-[13px] text-white font-['Charter',Georgia,serif] flex-1 shadow-sm">
                     Sí, déjeme verificar. ¿Puede confirmar su fecha de nacimiento?
                   </div>
                 </div>
               </div>
 
               {/* Compliance checks */}
-              <div className="bg-[#f7f6f9] rounded-[8px] p-4 border border-[#E5E5E5] space-y-3">
-                <div className="text-[12px] font-bold text-[#1a1a1a] uppercase tracking-wider mb-2 font-['Instrument_Sans',system-ui,sans-serif]">Auto-QA Checks</div>
-                
+              <div className="bg-[#F9F7F7] rounded-[8px] p-4 border border-[#DBE2EF] space-y-3">
+                <div className="text-[12px] font-bold text-[#112D4E] uppercase tracking-wider mb-2 font-['Instrument_Sans',system-ui,sans-serif]">Auto-QA Checks</div>
+
                 <div className="flex items-center justify-between text-[13px]">
-                  <div className="flex items-center gap-2 text-[#5a5a5a]">
-                    <Check className="w-4 h-4 text-[#7da17e]" />
+                  <div className="flex items-center gap-2 text-[#5a7b9e]">
+                    <Check className="w-4 h-4 text-[#3F72AF]" />
                     HIPAA Verification
                   </div>
                   <span className="font-mono text-green-600 font-medium">PASS</span>
                 </div>
-                
+
                 <div className="flex items-center justify-between text-[13px]">
-                  <div className="flex items-center gap-2 text-[#5a5a5a]">
-                    <Check className="w-4 h-4 text-[#7da17e]" />
+                  <div className="flex items-center gap-2 text-[#5a7b9e]">
+                    <Check className="w-4 h-4 text-[#3F72AF]" />
                     Formulary Explanation
                   </div>
                   <span className="font-mono text-green-600 font-medium">PASS</span>
@@ -142,40 +139,40 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Decorative elements / Floating cards */}
-            <motion.div 
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute -right-8 top-12 bg-white rounded-[8px] p-3 shadow-xl border border-[#E5E5E5] flex items-center gap-3 z-20"
+            {/* Static decorative cards */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="absolute -right-4 top-12 bg-white rounded-[8px] p-3 shadow-xl border border-[#DBE2EF] flex items-center gap-3 z-20"
             >
-              <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center">
-                <ShieldAlert className="w-4 h-4 text-red-600" />
+              <div className="w-8 h-8 rounded-full bg-[#112D4E]/10 flex items-center justify-center">
+                <Check className="w-4 h-4 text-[#112D4E]" />
               </div>
               <div>
-                <div className="text-[12px] font-bold text-[#1a1a1a] font-['Instrument_Sans',system-ui,sans-serif]">Risk Prevented</div>
-                <div className="text-[11px] text-[#5a5a5a]">Disclosures missed (0)</div>
+                <div className="text-[12px] font-bold text-[#112D4E] font-['Instrument_Sans',system-ui,sans-serif]">Fully Compliant</div>
+                <div className="text-[11px] text-[#5a7b9e]">All disclosures verified</div>
               </div>
             </motion.div>
 
-            <motion.div 
-              animate={{ y: [0, 10, 0] }}
-              transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-              className="absolute -left-6 bottom-12 bg-[#163f38] text-white rounded-[8px] p-3 shadow-xl flex items-center gap-3 z-20"
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="absolute -left-4 bottom-12 bg-[#112D4E] text-white rounded-[8px] p-3 shadow-xl flex items-center gap-3 z-20"
             >
-               <div className="flex gap-1 items-end h-6">
-                 {[40, 70, 45, 90, 65, 85, 100].map((h, i) => (
-                   <motion.div 
-                     key={i} 
-                     initial={{ height: "20%" }}
-                     animate={{ height: `${h}%` }}
-                     transition={{ repeat: Infinity, duration: 1.5, repeatType: "mirror", delay: i * 0.1 }}
-                     className="w-1.5 bg-[#7da17e] rounded-t-[2px]"
-                   />
-                 ))}
-               </div>
+              <div className="flex gap-1 items-end h-6">
+                {[40, 70, 45, 90, 65, 85, 100].map((h, i) => (
+                  <div
+                    key={i}
+                    className="w-1.5 bg-[#3F72AF] rounded-t-[2px]"
+                    style={{ height: `${h}%` }}
+                  />
+                ))}
+              </div>
               <div>
                 <div className="text-[12px] font-bold font-['Instrument_Sans',system-ui,sans-serif]">100% Audited</div>
-                <div className="text-[11px] text-[#98b6b0]">Across 32 languages</div>
+                <div className="text-[11px] text-[#a8b8d4]">Across 32 languages</div>
               </div>
             </motion.div>
           </motion.div>

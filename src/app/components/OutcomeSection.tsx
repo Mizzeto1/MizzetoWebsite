@@ -1,4 +1,4 @@
-import { CheckCircle, Shield, TrendingUp, ArrowUpRight } from 'lucide-react';
+import { CheckCircle, Shield, TrendingUp } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export function OutcomeSection() {
@@ -24,67 +24,57 @@ export function OutcomeSection() {
   ];
 
   return (
-    <section className="bg-white py-32 border-b border-[#E5E5E5] relative">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-        
-        {/* Section Headline */}
-        <motion.div 
+    <section className="bg-white py-16 md:py-24 border-b border-[#DBE2EF] relative">
+      <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
+
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-24 max-w-3xl mx-auto"
+          className="text-center mb-12 max-w-3xl mx-auto"
         >
-          <h2 className="font-['Instrument_Sans',system-ui,sans-serif] text-[44px] md:text-[56px] font-semibold text-[#1a1a1a] mb-6 leading-[1.1] tracking-tight">
-            What if you could QA <br/>
-            <span className="text-[#163f38] relative inline-block">
+          <h2 className="font-['Instrument_Sans',system-ui,sans-serif] text-[28px] md:text-[36px] lg:text-[44px] font-semibold text-[#112D4E] mb-4 leading-[1.1] tracking-tight">
+            What if you could QA <br />
+            <span className="text-[#112D4E] relative inline-block">
               every single call?
-              <span className="absolute bottom-1 left-0 w-full h-[8px] bg-[#7da17e]/30 -z-10 rounded-full"></span>
+              <span className="absolute bottom-1 left-0 w-full h-[8px] bg-[#3F72AF]/30 -z-10 rounded-full"></span>
             </span>
           </h2>
-          <p className="font-['Charter',Georgia,serif] text-[#5a5a5a] text-[20px] md:text-[24px] leading-[1.6]">
+          <p className="font-['Charter',Georgia,serif] text-[#5a7b9e] text-[15px] md:text-[18px] leading-[1.6]">
             Move from reactive sampling to proactive, total coverage.
           </p>
         </motion.div>
 
-        {/* High-End Editorial Grid Layout */}
-        <div className="grid md:grid-cols-3 border-t border-l border-[#E5E5E5]">
+        <div className="grid md:grid-cols-3 border-t border-l border-[#DBE2EF]">
           {outcomes.map((outcome, index) => {
             const Icon = outcome.icon;
             return (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="group relative p-10 lg:p-14 border-r border-b border-[#E5E5E5] bg-white hover:bg-[#f7f6f9] transition-colors duration-500 flex flex-col h-full"
+                className="relative p-6 md:p-10 lg:p-14 border-r border-b border-[#DBE2EF] bg-white flex flex-col h-full"
               >
-                {/* Subtle Hover Reveal Arrow */}
-                <div className="absolute top-8 right-8 opacity-0 -translate-y-2 translate-x-2 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300">
-                  <ArrowUpRight className="w-6 h-6 text-[#163f38]/40" />
-                </div>
-
-                <div className="mb-12">
-                  <div className="font-['Instrument_Sans',system-ui,sans-serif] text-[64px] lg:text-[80px] font-bold text-[#163f38] leading-none mb-6 tracking-tighter">
+                <div className="mb-6 md:mb-8">
+                  <div className="font-['Instrument_Sans',system-ui,sans-serif] text-[40px] md:text-[52px] lg:text-[64px] font-bold text-[#112D4E] leading-none mb-3 tracking-tighter">
                     {outcome.metric}
                   </div>
-                  <div className="w-12 h-12 bg-[#7da17e]/10 rounded-[12px] flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-[#163f38]" />
+                  <div className="w-10 h-10 bg-[#3F72AF]/10 rounded-[10px] flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-[#112D4E]" />
                   </div>
                 </div>
-                
+
                 <div className="mt-auto">
-                  <h3 className="font-['Instrument_Sans',system-ui,sans-serif] text-[24px] font-bold text-[#1a1a1a] mb-4">
+                  <h3 className="font-['Instrument_Sans',system-ui,sans-serif] text-[18px] md:text-[20px] font-bold text-[#112D4E] mb-2">
                     {outcome.title}
                   </h3>
-                  <p className="font-['Charter',Georgia,serif] text-[#5a5a5a] text-[18px] leading-[1.6]">
+                  <p className="font-['Charter',Georgia,serif] text-[#5a7b9e] text-[14px] md:text-[16px] leading-[1.6]">
                     {outcome.body}
                   </p>
                 </div>
-                
-                {/* Subtle bottom border highlight on hover */}
-                <div className="absolute bottom-0 left-0 w-0 h-1 bg-[#163f38] group-hover:w-full transition-all duration-500 ease-out"></div>
               </motion.div>
             );
           })}

@@ -1,37 +1,38 @@
-import { Hexagon, Triangle, Circle, Square } from 'lucide-react';
+import { ShieldCheck, Lock, FileCheck, BadgeCheck } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export function TrustBar() {
-  const logos = [
-    { icon: Hexagon, name: "Acme Health" },
-    { icon: Triangle, name: "CarePlus" },
-    { icon: Circle, name: "NovaShield" },
-    { icon: Square, name: "Horizon Med" },
-    { icon: Hexagon, name: "Apex Care" },
+  const badges = [
+    { icon: ShieldCheck, label: 'SOC 2 Type II', sublabel: 'Certified' },
+    { icon: Lock, label: 'HIPAA', sublabel: 'Compliant' },
+    { icon: FileCheck, label: 'HITRUST CSF', sublabel: 'Validated' },
+    { icon: BadgeCheck, label: 'BAA', sublabel: 'Available' },
   ];
 
   return (
-    <section className="bg-white border-t border-b border-[#E5E5E5] overflow-hidden">
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-8 py-10 md:py-14">
-        <p className="text-center font-['Instrument_Sans',system-ui,sans-serif] text-[13px] font-bold text-[#a0a0a0] uppercase tracking-[0.2em] mb-8">
-          Trusted by compliance teams at leading health plans
-        </p>
-        
-        {/* Infinite scroll or simple wrap - doing simple wrap with animation for elegance */}
-        <motion.div 
+    <section className="bg-white border-t border-b border-[#DBE2EF]">
+      <div className="max-w-[1280px] mx-auto px-4 lg:px-8 py-5 md:py-7">
+        <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all duration-500"
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex flex-wrap justify-center items-center gap-6 md:gap-12 lg:gap-20"
         >
-          {logos.map((logo, idx) => {
-            const Icon = logo.icon;
+          {badges.map((badge, idx) => {
+            const Icon = badge.icon;
             return (
-              <div key={idx} className="flex items-center gap-2 group cursor-default">
-                <Icon className="w-6 h-6 text-[#163f38] transition-transform duration-300 group-hover:scale-110" />
-                <span className="text-[22px] font-bold text-[#163f38] font-['Instrument_Sans',system-ui,sans-serif] tracking-tight">
-                  {logo.name}
-                </span>
+              <div key={idx} className="flex items-center gap-2 px-2 py-1">
+                <div className="w-8 h-8 bg-[#112D4E]/5 border border-[#112D4E]/10 rounded-[6px] flex items-center justify-center">
+                  <Icon className="w-4 h-4 text-[#112D4E]" />
+                </div>
+                <div>
+                  <div className="font-['Instrument_Sans',system-ui,sans-serif] text-[12px] font-bold text-[#112D4E] leading-tight">
+                    {badge.label}
+                  </div>
+                  <div className="font-['Instrument_Sans',system-ui,sans-serif] text-[10px] text-[#5a7b9e] leading-tight">
+                    {badge.sublabel}
+                  </div>
+                </div>
               </div>
             );
           })}

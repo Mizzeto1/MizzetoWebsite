@@ -1,9 +1,9 @@
 import { Navigation } from './components/Navigation';
 import { HeroSection } from './components/HeroSection';
 import { TrustBar } from './components/TrustBar';
+import { MetricsStrip } from './components/MetricsStrip';
 import { ProblemSection } from './components/ProblemSection';
 import { OutcomeSection } from './components/OutcomeSection';
-import { FeatureSection } from './components/FeatureSection';
 import { HowItWorksSection } from './components/HowItWorksSection';
 import { TestimonialSection } from './components/TestimonialSection';
 import { FAQSection } from './components/FAQSection';
@@ -18,7 +18,7 @@ export default function App() {
       <TrustBar />
       <ProblemSection />
       <OutcomeSection />
-      <FeatureSection />
+      <MetricsStrip />
       <HowItWorksSection />
       <TestimonialSection />
       <FAQSection />
