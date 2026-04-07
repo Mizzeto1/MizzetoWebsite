@@ -1,24 +1,51 @@
-import { Star, Quote } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { motion } from 'motion/react';
+import { useState } from 'react';
+import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+
+const testimonials = [
+  {
+    quote: "Mizzeto has completely changed how we audit our external BPOs. We used to check a 2% sample of interpreter calls; now we audit 100%. We instantly found language gaps we didn't know existed.",
+    author: "Sarah Jenkins",
+    title: "VP of Member Experience",
+    company: "Nationwide Health",
+    initials: "SJ",
+    rating: 5,
+  },
+  {
+    quote: "Before Mizzeto, our Spanish-speaking members were essentially unmonitored. Within 48 hours of deployment, we identified critical compliance gaps in our interpreter line that had gone unnoticed for months.",
+    author: "Michael Torres",
+    title: "Director of Quality Assurance",
+    company: "Pacific Care MCO",
+    initials: "MT",
+    rating: 5,
+  },
+  {
+    quote: "The CMS scoring alone saved our compliance team hundreds of hours per quarter. But the real game-changer was getting full visibility into our vendor calls—we finally have the evidence to hold them accountable.",
+    author: "Dr. Linda Osei",
+    title: "Chief Quality Officer",
+    company: "Meridian Health Plan",
+    initials: "LO",
+    rating: 5,
+  },
+];
 
 export function TestimonialSection() {
-  const testimonials = [
-    {
-      quote: "Mizzeto has completely changed how we audit our external BPOs. We used to check a 2% sample of interpreter calls; now we audit 100%. We instantly found language gaps we didn't know existed.",
-      author: "Sarah Jenkins",
-      title: "VP of Member Experience, Nationwide Health",
-      image: "https://images.unsplash.com/photo-1484863137850-59afcfe05386?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmZW1hbGUlMjBoZWFsdGhjYXJlJTIwZXhlY3V0aXZlJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzc1NTA3NTc0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      rating: 5
-    }
-  ];
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  const paginate = (newDirection: number) => {
+    setDirection(newDirection);
+    setCurrent((prev) => (prev + newDirection + testimonials.length) % testimonials.length);
+  };
+
+  const t = testimonials[current];
 
   return (
     <section id="customers" className="bg-white py-14 md:py-20 relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#112D4E_1px,transparent_1px)] [background-size:16px_16px]"></div>
 
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8 relative z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -36,45 +63,89 @@ export function TestimonialSection() {
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, type: "spring", stiffness: 50 }}
-          className="max-w-4xl mx-auto bg-[#0d1f35] rounded-[16px] md:rounded-[24px] p-6 md:p-10 shadow-[0_32px_64px_-16px_rgba(17,45,78,0.25)] relative overflow-hidden group"
+          className="max-w-4xl mx-auto bg-[#0d1f35] rounded-[16px] md:rounded-[24px] p-6 md:p-10 shadow-[0_32px_64px_-16px_rgba(17,45,78,0.25)] relative overflow-hidden"
         >
-          <div className="absolute top-0 right-0 -mr-32 -mt-32 w-[500px] h-[500px] rounded-full bg-[#3F72AF]/10 blur-3xl group-hover:bg-[#3F72AF]/20 transition-colors duration-1000"></div>
+          <div className="absolute top-0 right-0 -mr-32 -mt-32 w-[500px] h-[500px] rounded-full bg-[#3F72AF]/10 blur-3xl"></div>
           <Quote className="absolute top-8 right-12 w-32 h-32 text-white/5 -rotate-6" />
-          
-          <div className="flex flex-col md:flex-row gap-12 lg:gap-16 items-center relative z-10">
-            <div className="w-36 h-36 md:w-56 md:h-56 flex-shrink-0 relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#3F72AF] to-[#112D4E] rounded-full blur-[2px] scale-105"></div>
-              <ImageWithFallback 
-                src={testimonials[0].image} 
-                alt={testimonials[0].author} 
-                className="w-full h-full object-cover rounded-full border-4 border-[#0d1f35] relative z-10"
-              />
+
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={current}
+              custom={direction}
+              initial={{ opacity: 0, x: direction > 0 ? 60 : -60 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: direction > 0 ? -60 : 60 }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+              className="flex flex-col md:flex-row gap-10 lg:gap-16 items-center relative z-10"
+            >
+              {/* Avatar */}
+              <div className="w-28 h-28 md:w-44 md:h-44 flex-shrink-0 relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#3F72AF] to-[#112D4E] rounded-full blur-[2px] scale-105"></div>
+                <div className="w-full h-full rounded-full bg-gradient-to-br from-[#3F72AF] to-[#1a3d62] flex items-center justify-center relative z-10 border-4 border-[#0d1f35]">
+                  <span className="font-['Instrument_Sans',system-ui,sans-serif] text-[32px] md:text-[48px] font-bold text-white/90 select-none">
+                    {t.initials}
+                  </span>
+                </div>
+              </div>
+
+              <div className="flex-1 space-y-6">
+                <div className="flex gap-1.5">
+                  {[...Array(t.rating)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-[#3F72AF] fill-[#3F72AF]" />
+                  ))}
+                </div>
+
+                <blockquote className="text-[16px] md:text-[20px] text-white leading-[1.5] italic font-['Charter',Georgia,serif]">
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+
+                <div className="pt-2 border-t border-[#112D4E]/50">
+                  <div className="font-['Instrument_Sans',system-ui,sans-serif] text-[15px] font-bold text-white tracking-wide">
+                    {t.author}
+                  </div>
+                  <div className="text-[#a8b8d4] text-[13px] font-['Charter',Georgia,serif] mt-0.5">
+                    {t.title}, {t.company}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Controls */}
+          <div className="flex items-center justify-between mt-8 relative z-10">
+            <div className="flex gap-2">
+              {testimonials.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => { setDirection(idx > current ? 1 : -1); setCurrent(idx); }}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    idx === current ? 'bg-[#3F72AF] w-8' : 'bg-[#1a2d4e] hover:bg-[#3F72AF]/40'
+                  }`}
+                  aria-label={`Go to testimonial ${idx + 1}`}
+                />
+              ))}
             </div>
-            
-            <div className="flex-1 space-y-8">
-              <div className="flex gap-1.5">
-                {[...Array(testimonials[0].rating)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 text-[#3F72AF] fill-[#3F72AF]" />
-                ))}
-              </div>
-              
-              <blockquote className="text-[17px] md:text-[22px] text-white leading-[1.5] italic font-['Charter',Georgia,serif]">
-                "{testimonials[0].quote}"
-              </blockquote>
-              
-              <div className="pt-2 border-t border-[#112D4E]/50">
-                <div className="font-['Instrument_Sans',system-ui,sans-serif] text-[16px] font-bold text-white tracking-wide">
-                  {testimonials[0].author}
-                </div>
-                <div className="text-[#a8b8d4] text-[13px] font-['Charter',Georgia,serif] mt-1">
-                  {testimonials[0].title}
-                </div>
-              </div>
+
+            <div className="flex gap-3">
+              <button
+                onClick={() => paginate(-1)}
+                className="w-10 h-10 rounded-full border border-[#112D4E] hover:border-[#3F72AF]/50 flex items-center justify-center text-[#a8b8d4] hover:text-white transition-colors"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={() => paginate(1)}
+                className="w-10 h-10 rounded-full border border-[#112D4E] hover:border-[#3F72AF]/50 flex items-center justify-center text-[#a8b8d4] hover:text-white transition-colors"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
             </div>
           </div>
         </motion.div>
