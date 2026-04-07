@@ -10,7 +10,7 @@ export function TrustBar() {
   ];
 
   return (
-    <section className="bg-white border-t border-b border-[#DBE2EF]">
+    <section className="bg-white border-t border-b border-[#D6E6F2]">
       <div className="max-w-[1280px] mx-auto px-4 lg:px-8 py-5 md:py-7">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
@@ -22,14 +22,14 @@ export function TrustBar() {
             const Icon = badge.icon;
             return (
               <div key={idx} className="flex items-center gap-2 px-2 py-1">
-                <div className="w-8 h-8 bg-[#112D4E]/5 border border-[#112D4E]/10 rounded-[6px] flex items-center justify-center">
-                  <Icon className="w-4 h-4 text-[#112D4E]" />
+                <div className="w-8 h-8 bg-[#2B4865]/5 border border-[#2B4865]/10 rounded-[6px] flex items-center justify-center">
+                  <Icon className="w-4 h-4 text-[#2B4865]" />
                 </div>
                 <div>
-                  <div className="font-['Instrument_Sans',system-ui,sans-serif] text-[12px] font-bold text-[#112D4E] leading-tight">
+                  <div className="font-['Instrument_Sans',system-ui,sans-serif] text-[12px] font-bold text-[#2B4865] leading-tight">
                     {badge.label}
                   </div>
-                  <div className="font-['Instrument_Sans',system-ui,sans-serif] text-[10px] text-[#5a7b9e] leading-tight">
+                  <div className="font-['Instrument_Sans',system-ui,sans-serif] text-[10px] text-[#769FCD] leading-tight">
                     {badge.sublabel}
                   </div>
                 </div>

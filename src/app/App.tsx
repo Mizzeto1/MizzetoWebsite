@@ -12,7 +12,7 @@ import { Footer } from './components/Footer';
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[var(--mz-surface)] font-['Charter',Georgia,serif]">
+    <div className="min-h-screen bg-[#F7FBFC] font-['Charter',Georgia,serif]">
       <Navigation />
       <HeroSection />
       <TrustBar />

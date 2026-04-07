@@ -1,27 +1,27 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Colors */
-  --mz-primary: #3F72AF;
-  --mz-accent: #112D4E;
-  --mz-surface: #F9F7F7;
-  --mz-surface-dark: #112D4E;
-  --mz-on-surface: #112D4E;
-  --mz-on-surface-variant: #5a7b9e;
-  --mz-on-surface-dark: #F9F7F7;
-  --mz-primary-container: #DBE2EF;
-  --mz-accent-container: #DBE2EF;
+  /* Colors — New palette: #F7FBFC, #D6E6F2, #B9D7EA, #769FCD */
+  --mz-primary: #769FCD;
+  --mz-accent: #2B4865;
+  --mz-surface: #F7FBFC;
+  --mz-surface-dark: #2B4865;
+  --mz-on-surface: #2B4865;
+  --mz-on-surface-variant: #769FCD;
+  --mz-on-surface-dark: #F7FBFC;
+  --mz-primary-container: #D6E6F2;
+  --mz-accent-container: #D6E6F2;
   --mz-error: #BA1A1A;
   --mz-error-container: #FFDAD6;
   --mz-success: #1B7D46;
   --mz-warning: #9E6C00;
-  --mz-border-color: #DBE2EF;
-  --mz-border-color-strong: #3F72AF;
-  
+  --mz-border-color: #D6E6F2;
+  --mz-border-color-strong: #769FCD;
+
   /* Typography */
   --mz-font-headline: 'Instrument Sans', system-ui, sans-serif;
   --mz-font-body: 'Charter', Georgia, serif;
-  
+
   /* Spacing */
   --mz-space-xs: 4px;
   --mz-space-sm: 8px;
@@ -31,20 +31,20 @@
   --mz-space-2xl: 48px;
   --mz-space-3xl: 64px;
   --mz-space-4xl: 96px;
-  
+
   /* Border Radius */
   --mz-radius-sm: 4px;
   --mz-radius-md: 8px;
   --mz-radius-lg: 12px;
   --mz-radius-xl: 16px;
   --mz-radius-full: 9999px;
-  
+
   /* Shadows */
-  --mz-shadow-sm: 0 1px 2px rgba(17,45,78,0.05);
-  --mz-shadow-md: 0 4px 6px rgba(17,45,78,0.07);
-  --mz-shadow-lg: 0 10px 15px rgba(17,45,78,0.1);
-  --mz-shadow-xl: 0 20px 25px rgba(17,45,78,0.15);
-  
+  --mz-shadow-sm: 0 1px 2px rgba(43,72,101,0.05);
+  --mz-shadow-md: 0 4px 6px rgba(43,72,101,0.07);
+  --mz-shadow-lg: 0 10px 15px rgba(43,72,101,0.1);
+  --mz-shadow-xl: 0 20px 25px rgba(43,72,101,0.15);
+
   /* Motion */
   --mz-duration-fast: 150ms;
   --mz-duration-normal: 200ms;
@@ -159,11 +159,6 @@
   body {
     @apply bg-background text-foreground;
   }
-
-  /**
-  * Default typography styles for HTML elements (h1-h4, p, label, button, input).
-  * These are in @layer base, so Tailwind utility classes (like text-sm, text-lg) automatically override them.
-  */
 
   html {
     font-size: var(--font-size);

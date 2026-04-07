@@ -24,7 +24,7 @@ export function OutcomeSection() {
   ];
 
   return (
-    <section className="bg-white py-16 md:py-24 border-b border-[#DBE2EF] relative">
+    <section className="bg-white py-16 md:py-24 border-b border-[#D6E6F2] relative">
       <div className="max-w-[1280px] mx-auto px-4 lg:px-8">
 
         <motion.div
@@ -34,19 +34,19 @@ export function OutcomeSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 max-w-3xl mx-auto"
         >
-          <h2 className="font-['Instrument_Sans',system-ui,sans-serif] text-[28px] md:text-[36px] lg:text-[44px] font-semibold text-[#112D4E] mb-4 leading-[1.1] tracking-tight">
+          <h2 className="font-['Instrument_Sans',system-ui,sans-serif] text-[28px] md:text-[36px] lg:text-[44px] font-semibold text-[#2B4865] mb-4 leading-[1.1] tracking-tight">
             What if you could QA <br />
-            <span className="text-[#112D4E] relative inline-block">
+            <span className="text-[#2B4865] relative inline-block">
               every single call?
-              <span className="absolute bottom-1 left-0 w-full h-[8px] bg-[#3F72AF]/30 -z-10 rounded-full"></span>
+              <span className="absolute bottom-1 left-0 w-full h-[8px] bg-[#B9D7EA]/40 -z-10 rounded-full"></span>
             </span>
           </h2>
-          <p className="font-['Charter',Georgia,serif] text-[#5a7b9e] text-[15px] md:text-[18px] leading-[1.6]">
+          <p className="font-['Charter',Georgia,serif] text-[#769FCD] text-[15px] md:text-[18px] leading-[1.6]">
             Move from reactive sampling to proactive, total coverage.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 border-t border-l border-[#DBE2EF]">
+        <div className="grid md:grid-cols-3 border-t border-l border-[#D6E6F2]">
           {outcomes.map((outcome, index) => {
             const Icon = outcome.icon;
             return (
@@ -56,22 +56,22 @@ export function OutcomeSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="relative p-6 md:p-10 lg:p-14 border-r border-b border-[#DBE2EF] bg-white flex flex-col h-full"
+                className="relative p-6 md:p-10 lg:p-14 border-r border-b border-[#D6E6F2] bg-white flex flex-col h-full"
               >
                 <div className="mb-6 md:mb-8">
-                  <div className="font-['Instrument_Sans',system-ui,sans-serif] text-[40px] md:text-[52px] lg:text-[64px] font-bold text-[#112D4E] leading-none mb-3 tracking-tighter">
+                  <div className="font-['Instrument_Sans',system-ui,sans-serif] text-[40px] md:text-[52px] lg:text-[64px] font-bold text-[#2B4865] leading-none mb-3 tracking-tighter">
                     {outcome.metric}
                   </div>
-                  <div className="w-10 h-10 bg-[#3F72AF]/10 rounded-[10px] flex items-center justify-center">
-                    <Icon className="w-5 h-5 text-[#112D4E]" />
+                  <div className="w-10 h-10 bg-[#B9D7EA]/20 rounded-[10px] flex items-center justify-center">
+                    <Icon className="w-5 h-5 text-[#2B4865]" />
                   </div>
                 </div>
 
                 <div className="mt-auto">
-                  <h3 className="font-['Instrument_Sans',system-ui,sans-serif] text-[18px] md:text-[20px] font-bold text-[#112D4E] mb-2">
+                  <h3 className="font-['Instrument_Sans',system-ui,sans-serif] text-[18px] md:text-[20px] font-bold text-[#2B4865] mb-2">
                     {outcome.title}
                   </h3>
-                  <p className="font-['Charter',Georgia,serif] text-[#5a7b9e] text-[14px] md:text-[16px] leading-[1.6]">
+                  <p className="font-['Charter',Georgia,serif] text-[#769FCD] text-[14px] md:text-[16px] leading-[1.6]">
                     {outcome.body}
                   </p>
                 </div>

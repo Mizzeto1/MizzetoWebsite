@@ -9,8 +9,8 @@ export function MetricsStrip() {
   ];
 
   return (
-    <section className="bg-[#112D4E] py-8 md:py-10 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(63,114,175,0.1)_0%,transparent_70%)] pointer-events-none" />
+    <section className="bg-[#2B4865] py-8 md:py-10 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(118,159,205,0.1)_0%,transparent_70%)] pointer-events-none" />
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
           {metrics.map((metric, idx) => (
@@ -25,7 +25,7 @@ export function MetricsStrip() {
               <div className="font-['Instrument_Sans',system-ui,sans-serif] text-[24px] md:text-[30px] lg:text-[36px] font-bold text-white leading-none tracking-tight">
                 {metric.value}
               </div>
-              <div className="font-['Instrument_Sans',system-ui,sans-serif] text-[12px] text-[#a8b8d4] mt-2 font-medium tracking-wide uppercase">
+              <div className="font-['Instrument_Sans',system-ui,sans-serif] text-[12px] text-[#B9D7EA] mt-2 font-medium tracking-wide uppercase">
                 {metric.label}
               </div>
             </motion.div>

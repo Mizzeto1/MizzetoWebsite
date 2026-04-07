@@ -41,7 +41,7 @@ export function FAQSection() {
   ];
 
   return (
-    <section className="bg-[#F9F7F7] py-14 md:py-20">
+    <section className="bg-[#F7FBFC] py-14 md:py-20">
       <div className="max-w-[1024px] mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -50,10 +50,10 @@ export function FAQSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-10"
         >
-          <h2 className="font-['Instrument_Sans',system-ui,sans-serif] text-[26px] md:text-[34px] font-semibold text-[#112D4E] mb-4 leading-[1.2] tracking-tight">
+          <h2 className="font-['Instrument_Sans',system-ui,sans-serif] text-[26px] md:text-[34px] font-semibold text-[#2B4865] mb-4 leading-[1.2] tracking-tight">
             Frequently Asked Questions
           </h2>
-          <p className="text-[#5a7b9e] text-[14px] md:text-[16px] leading-[1.6] font-['Charter',Georgia,serif]">
+          <p className="text-[#769FCD] text-[14px] md:text-[16px] leading-[1.6] font-['Charter',Georgia,serif]">
             Everything you need to know about implementing automated QA in your contact center.
           </p>
         </motion.div>
@@ -68,17 +68,17 @@ export function FAQSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="bg-white rounded-[12px] border border-[#DBE2EF] overflow-hidden transition-shadow duration-200 hover:shadow-[0_4px_12px_rgba(17,45,78,0.06)]"
+                className="bg-white rounded-[12px] border border-[#D6E6F2] overflow-hidden transition-shadow duration-200 hover:shadow-[0_4px_12px_rgba(43,72,101,0.06)]"
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="w-full flex items-center justify-between p-5 md:p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3F72AF] focus-visible:ring-offset-2 rounded-[12px]"
+                  className="w-full flex items-center justify-between p-5 md:p-6 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-[#769FCD] focus-visible:ring-offset-2 rounded-[12px]"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-['Instrument_Sans',system-ui,sans-serif] text-[15px] md:text-[17px] font-medium text-[#112D4E] pr-4">
+                  <span className="font-['Instrument_Sans',system-ui,sans-serif] text-[15px] md:text-[17px] font-medium text-[#2B4865] pr-4">
                     {faq.question}
                   </span>
-                  <div className={`flex-shrink-0 ml-2 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-[#112D4E] text-white' : 'bg-[#F9F7F7] text-[#112D4E]'}`}>
+                  <div className={`flex-shrink-0 ml-2 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-[#2B4865] text-white' : 'bg-[#F7FBFC] text-[#2B4865]'}`}>
                     {isOpen ? (
                       <Minus className="w-4 h-4" />
                     ) : (
@@ -92,7 +92,7 @@ export function FAQSection() {
                     isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <div className="px-5 md:px-6 pb-5 md:pb-6 pt-0 text-[#5a7b9e] text-[13px] md:text-[15px] leading-[1.7] font-['Charter',Georgia,serif]">
+                  <div className="px-5 md:px-6 pb-5 md:pb-6 pt-0 text-[#769FCD] text-[13px] md:text-[15px] leading-[1.7] font-['Charter',Georgia,serif]">
                     {faq.answer}
                   </div>
                 </div>
